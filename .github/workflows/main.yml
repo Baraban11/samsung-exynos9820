@@ -13,7 +13,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        model: [ "G970F", "G973F", "G975F", "G977B", "G977N", "N976N", "N976B", "N975F" ]
+        model: [ "G975F" ]
 
     steps:
       - uses: actions/checkout@v3
@@ -92,9 +92,9 @@ jobs:
           set -e -o pipefail
           ./cruelbuild config                    \
                        model=${{ matrix.model }} \
-                       name="Cruel-KernelSU"     \
+                       name="Nurgatin-KernelSU"     \
                        toolchain=$TOOLCHAIN      \
-                       os_patch_level=2022-04    \
+                       os_patch_level=2023-06    \
                        -magisk                   \
                        +nohardening              \
                        +ttl                      \
